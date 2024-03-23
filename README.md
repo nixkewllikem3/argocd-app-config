@@ -1,9 +1,23 @@
 #### Commands
 
 ```bash
+docker login 
+minikube start
+
 # install ArgoCD in k8s
 kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+#app code side 
+kubectl apply -f application.yaml
+
+#if you receive this error
+W0323 16:48:07.168947   21180 main.go:291] Unable to resolve the current Docker CLI context "default": context "default": context not found: open C:\XXXXXX\meta.json: The system cannot find the path specified.
+error: error parsing application.yaml: error converting YAML to JSON: yaml: line 11: did not find expected key
+
+#
+docker context use default
+
 
 # access ArgoCD UI
 kubectl get svc -n argocd
