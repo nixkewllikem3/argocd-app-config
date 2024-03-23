@@ -32,6 +32,19 @@ ArgoCD console :  http://localhost:8080/applications/argocd/myapp-argo-applicati
 ```
 </br>
 
+#tests git
+update deployment to 1.0 
+commit and push 
+update deployment to 1.1 
+commit and push
+udpate 
+
+#update in cluster update outside of git
+kubectl edit deployment -n myapp myapp
+change replicas to 4 
+
+
+
 #### Links
 
 * Config repo: [https://gitlab.com/nanuchi/argocd-app-config](https://gitlab.com/nanuchi/argocd-app-config)
